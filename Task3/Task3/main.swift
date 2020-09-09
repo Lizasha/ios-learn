@@ -9,13 +9,15 @@
 import Foundation
 import Alamofire
 
-// let sema = DispatchSemaphore(value: 0)
+var username = readLine() //assume you enter your Name
+print(username)
 
 let headers: HTTPHeaders = [
     "Accept": "application/vnd.github.v3+json"
 ]
+var requestURL = "https://api.github.com/users/" + String(username!) + "/repos"
 
-AF.request("https://api.github.com/users/lizasha/repos", headers: headers).responseJSON { result in
+AF.request(requestURL, headers: headers).responseJSON { result in
     // tell compiler that response result value is dictionary array
     let repositories = (result.value as! [NSDictionary])
     

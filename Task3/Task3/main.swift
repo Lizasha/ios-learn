@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-var username = readLine() //assume you enter your Name
-print(username)
+print("Enter github username: ")
+var username = readLine()
 
 let headers: HTTPHeaders = [
     "Accept": "application/vnd.github.v3+json"
